@@ -1,0 +1,1 @@
+/Users/mika/.config/fisherman/docker-fish-completion/docker-compose.fish

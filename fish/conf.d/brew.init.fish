@@ -1,0 +1,1 @@
+/Users/mika/.config/fisherman/brew/init.fish

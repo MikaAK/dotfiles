@@ -1,0 +1,1 @@
+/Users/mika/.config/fisherman/osx/functions/manp.fish

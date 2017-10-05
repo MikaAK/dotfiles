@@ -1,0 +1,1 @@
+/Users/mika/.config/fisherman/gi/functions/gi.fish

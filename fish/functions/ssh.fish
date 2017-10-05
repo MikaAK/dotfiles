@@ -1,0 +1,1 @@
+/Users/mika/.config/fisherman/ssh/ssh.fish
