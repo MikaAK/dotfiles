@@ -9,7 +9,9 @@ brew update &&
 brew doctor &&
 
 # Install brew packages and fish
-brew install -y fish postgresql coreutils automake autoconf openssl libyaml readline libxslt libtool unixodbc &&
+brew install -y git hub fish postgresql coreutils automake autoconf \
+                openssl libyaml readline libxslt libtool unixodbc \
+                gpg rust python3 neovim &&
 sudo bash -c "echo '/usr/local/bin/fish' >> /etc/shells" &&
 sudo chsh -s /usr/local/bin/fish &&
 
@@ -33,4 +35,6 @@ fish --command "asdf global erlang 20.1" &&
 fish --command "asdf install elixir 1.5.1" &&
 fish --command "asdf global elixir 1.5.1" &&
 fish --command "asdf install nodejs 8.6.0" &&
-fish --command "asdf global nodejs 8.6.0"
+fish --command "asdf global nodejs 8.6.0" &&
+
+brew cleanup
