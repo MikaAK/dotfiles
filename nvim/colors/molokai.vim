@@ -271,16 +271,23 @@ if &t_Co > 255
    endif
 end
 
+hi javascriptImport guifg=#F92672
+hi javascriptExport guifg=#F92672
 hi javascriptFuncKeyword guifg=#A6E22E
+hi javascriptMethod guifg=#A6E22E
 hi javascriptFuncArg guifg=#FD971F
 hi javascriptMethod guifg=#FD971F
 hi javascriptDebugger guifg=#F7F6B5
+hi javascriptIdentifierName guifg=#FFFFFF
 hi javascriptClassMethodName guifg=#FD971F
+hi javascriptObjectMethodName guifg=#A6E22E
 hi javascriptClassName guifg=#AE81FF
 hi typescriptDecorators guifg=#66D9EF
 hi typescriptFuncArg guifg=#FD971F
 
+hi SpellBad guifg=#F92672 guibg=#000000
+hi SpellCap guifg=#FD971F guibg=#000000
+
 " Must be at the end, because of ctermbg=234 bug.
 " https://groups.google.com/forum/#!msg/vim_dev/afPqwAFNdrU/nqh6tOM87QUJ
 set background=dark
-
