@@ -1,0 +1,46 @@
+snippet a2comp "Angular Component" i
+import {Component} from '@angular/core'
+
+@Component({
+  selector: $1,
+  templateUrl: './$2.pug'
+  styleUrls: ['./$3.scss']
+})
+export class $4 {
+  $0
+}
+endsnippet
+
+snippet a2mod "Angular Module" i
+import {NgModule} from '@angular/core'
+
+@NgModule({
+  imports: [$1],
+  providers: [$2],
+  declarations: [$3]
+})
+export class $4 {
+  $0
+}
+endsnippet
+
+snippet a2service "Angular Service" i
+import {Injectable} from '@angular/core'
+
+@Injectable()
+export class $1 {
+  $0
+}
+endsnippet
+
+snippet a2effect "Angular ngrx effect" i
+import {Injectable} from '@angular/core'
+import {Effect, Actions} from '@ngrx/effects'
+
+@Injectable()
+export class $1Effect {
+	@Effect() public $0
+
+	constructor(private actions: Actions) { }
+}
+endsnippet

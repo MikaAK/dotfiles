@@ -3,9 +3,9 @@ set termguicolors
 call plug#begin("~/.config/nvim/plugins")
 
 " Completion
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'Shougo/neoinclude.vim'
-Plug 'Shougo/echodoc.vim'
+" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'Shougo/neoinclude.vim'
+" Plug 'Shougo/echodoc.vim'
 
 " Movement
 Plug 'easymotion/vim-easymotion'
@@ -14,16 +14,21 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'Raimondi/delimitMate'
 
 " Files
+" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+" Plug 'junegunn/fzf.vim'
 Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'qpkorr/vim-renamer'
 
 " Syntax
 Plug 'shmargum/vim-sass-colors'
-Plug 'vim-syntastic/syntastic'
+" Plug 'vim-syntastic/syntastic'
 Plug 'ternjs/tern_for_vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'jparise/vim-graphql'
+Plug 'posva/vim-vue'
 
 " Status Lines
 Plug 'airblade/vim-gitgutter'
@@ -38,7 +43,7 @@ Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'gavocanov/vim-js-indent'
 Plug 'othree/yajs'
 Plug 'othree/es.next.syntax.vim'
-Plug 'Quramy/tsuquyomi'
+" Plug 'Quramy/tsuquyomi'
 
 " HTML Languages
 Plug 'digitaltoad/vim-pug'
@@ -63,7 +68,12 @@ Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
 Plug 'mbbill/undotree'
 Plug 'Chiel92/vim-autoformat'
-Plug 'Shougo/vimproc.vim', {'do': 'make'}
+" Plug 'Shougo/vimproc.vim', {'do': 'make'}
+Plug 'tpope/vim-fugitive'
+Plug 'janko-m/vim-test'
+
+" Snippets
+Plug 'SirVer/ultisnips'
 
 call plug#end()
 
@@ -94,10 +104,10 @@ noremap <C-k> <C-W>k
 noremap <C-h> <C-W>h
 
 " If using deoplete enable, allows tab completion and disables for TS
-call deoplete#enable()
+" call deoplete#enable()
 
-inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-autocmd FileType ts,js,json let b:deoplete_disable_auto_complete = 1
+" inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+" autocmd FileType ts,js,json let b:deoplete_disable_auto_complete = 1
 
 " For conceal markers.
 if has('conceal')
@@ -110,35 +120,45 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 autocmd BufEnter * EnableStripWhitespaceOnSave
 
 set list
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+set listchars=trail:·
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_enable_typescript_checker = 1
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+" let g:syntastic_javascript_checkers = ['eslint']
+" let g:syntastic_enable_typescript_checker = 1
 
 let g:molokai_original = 0
 let g:rehash256 = 1
 
+" let $FZF_DEFAULT_COMMAND= 'ag -g ""'
+let g:fzf_action = {
+      \ 'ctrl-t': 'tab split',
+      \ 'ctrl-s': 'split',
+      \ 'ctrl-v': 'vsplit'
+      \ }
+nnoremap <c-p> :FZF<cr>
+
 let g:ctrlp_max_files=0
 let g:ctrlp_max_depth=50
-let g:ctrlp_custom_ignore='node_modules'
-
+" let g:ctrlp_custom_ignore='node_modules|deps|_build'
 let g:alchemist#extended_autocomplete = 1
 
+let g:UltiSnipsSnippetDirectories = [$HOME.'/.config/nvim/custom-snippets']
 let g:UltiSnipsListSnippets='<c-tab>'
-let g:UltiSnipsExpandTrigger='<D-e>'
-let g:UltiSnipsJumpForwardTrigger='<D-j>'
-let g:UltiSnipsJumpBackwardTrigger='<D-k>'
+" let g:UltiSnipsExpandTrigger='<shift-c-e>'
+" let g:UltiSnipsJumpForwardTrigger='<M-j>'
+" let g:UltiSnipsJumpBackwardTrigger='<M-k>'
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-h>"
+let g:UltiSnipsEditSplit="vertical"
 
 let g:tern_request_timeout = 1
 let g:tern_show_signature_in_pum = 0
 let g:tern#command = ["tern"]
-let g:tern#arguments = ["--persistent"]
+let g:tern#arguments = ["--persistent", "--no-port-file"]
 
 filetype plugin indent on    " required
 
@@ -158,6 +178,14 @@ filetype indent on
 " Set to auto read when a file is changed from the outside
 set autoread
 
+" Turn off statusbar, because it is externalized
+set noshowmode
+set noruler
+set laststatus=0
+set noshowcmd
+
+" Enable GUI mouse behavior
+set mouse=a
 
 set so=7
 
@@ -165,7 +193,7 @@ set so=7
 set wildmenu
 
 " Ignore compiled files
-set wildignore=*.o,*~,*.pyc
+set wildignore=*.o,*~,*.pyc,*/.git/*,*/node_modules/*,*/_build/*,*/deps/*
 
 "Always show current position
 set ruler
@@ -199,6 +227,8 @@ set magic
 set showmatch
 " How many tenths of a second to blink when matching brackets
 set mat=2
+
+set hidden
 
 " No annoying sound on errors
 set noerrorbells
@@ -236,6 +266,8 @@ set ffs=unix,dos,mac
 set nobackup
 set nowb
 set noswapfile
+set undodir=~/.config/nvim/undofiles
+set undofile
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -325,13 +357,13 @@ set viminfo^=%
 " => Status line
 """"""""""""""""""""""""""""""
 " Always show the status line
-set laststatus=2
+" set laststatus=2
 
 " Format the status line
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

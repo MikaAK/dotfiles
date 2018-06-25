@@ -1,1 +1,3 @@
-/Users/mika/.config/fisherman/osx/functions/flushdns.fish
+function flushdns -d "Flushes OS X DNS cache"
+  sudo killall -HUP mDNSResponder
+end
