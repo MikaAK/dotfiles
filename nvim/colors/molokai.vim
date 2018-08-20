@@ -285,9 +285,13 @@ hi javascriptClassName guifg=#AE81FF
 hi typescriptDecorators guifg=#66D9EF
 hi typescriptFuncArg guifg=#FD971F
 
+hi elixirBlockDefinition guifg=#F92672
+hi elixirKeyword guifg=#F92672
+
 hi SpellBad guifg=#F92672 guibg=#000000
 hi SpellCap guifg=#FD971F guibg=#000000
 
 " Must be at the end, because of ctermbg=234 bug.
 " https://groups.google.com/forum/#!msg/vim_dev/afPqwAFNdrU/nqh6tOM87QUJ
 set background=dark
+

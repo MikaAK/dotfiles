@@ -328,6 +328,10 @@ map <leader>ba :1,1000 bd!<cr>
 map <leader>tn :tabnew<cr>
 map <leader>to :tabonly<cr>
 map <leader>tc :tabclose<cr>
+map <leader>tj :tabnext<cr>
+map <leader>tk :tabprevious<cr>
+map <leader>th :tabfirst<cr>
+map <leader>tl :tablast<cr>
 map <leader>tm :tabmove
 
 " Opens a new tab with the current buffer's path
