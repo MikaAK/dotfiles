@@ -1,3 +1,2 @@
-mkdir -p ~/.config/{nvim,fish} &&
-cp -r ./nvim ~/.config &&
-cp -r ./fish ~/.config
+mkdir -p ~/.config/{nvim,fish,oni} &&
+cp -r ./{fish,oni,nvim} ~/.config
