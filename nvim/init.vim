@@ -13,6 +13,7 @@ Plug 'tpope/vim-surround'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'Raimondi/delimitMate'
 
+
 " Files
 " Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 " Plug 'junegunn/fzf.vim'
@@ -29,6 +30,7 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'jparise/vim-graphql'
 Plug 'posva/vim-vue'
+Plug 'w0rp/ale'
 
 " Status Lines
 Plug 'airblade/vim-gitgutter'
@@ -70,8 +72,11 @@ Plug 'mbbill/undotree'
 Plug 'Chiel92/vim-autoformat'
 " Plug 'Shougo/vimproc.vim', {'do': 'make'}
 Plug 'tpope/vim-fugitive'
+
+" Testing
 Plug 'janko-m/vim-test'
 
+Plug 'rhysd/vim-clang-format'
 " Snippets
 Plug 'SirVer/ultisnips'
 
@@ -82,6 +87,9 @@ call plug#end()
 let mapleader = ","
 let g:mapleader = ","
 map <Leader>w <esc>:w<CR>
+
+let test#neovim#term_position = "belowright"
+noremap <Leader><Leader>t :TestFile<CR>
 
 " Set Python3 path
 let g:python3_host_prog = '/usr/local/bin/python3'

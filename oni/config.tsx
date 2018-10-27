@@ -16,8 +16,9 @@ export const activate = (oni: Oni.Plugin.Api) => {
   oni.input.bind(['<tab>', '<down>'], 'contextMenu.next')
   oni.input.bind(['<shift-tab>', '<up>'], 'menu.previous')
   oni.input.bind(['<tab>', '<down>'], 'menu.next')
-  oni.input.bind('<m-w>', () => document.querySelector('.tab.selected .corner.enable-hover').click())
+  // oni.input.bind('<m-w>', () => document.querySelector('.tab.selected .corner.enable-hover').click())
 }
+
 
 export const deactivate = (_oni: Oni.Plugin.Api) => {
 }
@@ -30,5 +31,10 @@ export const configuration = {
   "editor.fontFamily": "Hack",
   "ui.fontFamily": "Hack",
   "sidebar.enabled": false,
+  "experimental.particles.enabled": true,
   "editor.textMateHighlighting.enabled": false
+  "language.elixir.languageServer.command": "/Users/mika/Documents/elixir-ls/release/language_server.sh",
+  "language.elixir.languageServer.rootFiles": ["mix.exs"],
+  "language.elixir.languageServer.arguments": ["--stdio"],
+  "language.elixir.languageServer.configuration": {}
 }
