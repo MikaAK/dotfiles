@@ -3,6 +3,8 @@ set termguicolors
 call plug#begin("~/.config/nvim/plugins")
 
 " Completion
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'elixir-lsp/coc-elixir', {'do': 'yarn install && yarn prepack'}
 " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " Plug 'Shougo/neoinclude.vim'
 " Plug 'Shougo/echodoc.vim'
@@ -23,14 +25,16 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'qpkorr/vim-renamer'
 
 " Syntax
-Plug 'shmargum/vim-sass-colors'
+" Plug 'shmargum/vim-sass-colors'
 " Plug 'vim-syntastic/syntastic'
-Plug 'ternjs/tern_for_vim'
+" Plug 'ternjs/tern_for_vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'jparise/vim-graphql'
 Plug 'posva/vim-vue'
-Plug 'w0rp/ale'
+Plug 'cespare/vim-toml'
+
+Plug 'JuliaEditorSupport/julia-vim'
 
 " Status Lines
 Plug 'airblade/vim-gitgutter'
@@ -56,6 +60,7 @@ Plug 'dag/vim-fish'
 " Elixir
 Plug 'slashmili/alchemist.vim'
 Plug 'elixir-editors/vim-elixir'
+Plug 'mmorearty/elixir-ctags'
 
 " Tracking
 Plug 'wakatime/vim-wakatime'
@@ -86,10 +91,28 @@ call plug#end()
 " Map Leader to ,
 let mapleader = ","
 let g:mapleader = ","
-map <Leader>w <esc>:w<CR>
+map <Leader>w <esc>:StripWhitespace<CR>:w<CR>
 
 let test#neovim#term_position = "belowright"
-noremap <Leader><Leader>t :TestFile<CR>
+noremap <Leader><Leader>tf :TestFile<CR>
+noremap <Leader><Leader>tn :TestNearest<CR>
+
+" Completion
+let g:coc_node_path = "/Users/mika/n/bin/node"
+
+" Map completion select to tab
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+inoremap <silent><expr> <Tab>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<Tab>" :
+      \ coc#refresh()
+
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 " Set Python3 path
 let g:python3_host_prog = '/usr/local/bin/python3'
@@ -114,8 +137,18 @@ noremap <C-h> <C-W>h
 " If using deoplete enable, allows tab completion and disables for TS
 " call deoplete#enable()
 
-" inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-" autocmd FileType ts,js,json let b:deoplete_disable_auto_complete = 1
+" let g:deoplete#enable_at_startup = 1
+" let g:deoplete#auto_completion_start_length = 1
+" let g:deoplete#enable_smart_case = 1
+
+" let g:deoplete#deoplete_onmni_patterns = get(g:, 'deoplete#force_omni_input_patterns', {})
+
+" inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+" inoremap <expr><s-Tab> pumvisible() ? "\<C-p>" : "\<C-k>"
+
+" au FileType javascript,jsx,javascript.jsx setl omnifunc=tern#Complete
+" let g:jsx_ext_required = 1
+
 
 " For conceal markers.
 if has('conceal')
@@ -327,7 +360,7 @@ map <c-space> ?
 map <silent> <leader><cr> :noh<cr>
 
 " Close the current buffer
-map <leader>bd :Bclose<cr>
+map <leader>bc :Bclose<cr>
 
 " Close all the buffers
 map <leader>ba :1,1000 bd!<cr>
@@ -473,11 +506,11 @@ map <leader>pp :setlocal paste!<cr>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! CmdLine(str)
-    exe "menu Foo.Bar :" . a:str
-    emenu Foo.Bar
-    unmenu Foo
-endfunction
+" function! CmdLine(str)
+"     exe "menu Foo.Bar :" . a:str
+"     emenu Foo.Bar
+"     unmenu Foo
+" endfunction
 
 function! VisualSelection(direction) range
     let l:saved_reg = @"
