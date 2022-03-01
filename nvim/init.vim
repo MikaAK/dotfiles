@@ -23,6 +23,7 @@ Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'qpkorr/vim-renamer'
+Plug 'jremmen/vim-ripgrep'
 
 " Syntax
 " Plug 'shmargum/vim-sass-colors'
@@ -85,6 +86,8 @@ Plug 'rhysd/vim-clang-format'
 " Snippets
 Plug 'SirVer/ultisnips'
 
+Plug 'mattn/emmet-vim'
+
 call plug#end()
 
 
@@ -96,6 +99,8 @@ map <Leader>w <esc>:StripWhitespace<CR>:w<CR>
 let test#neovim#term_position = "belowright"
 noremap <Leader><Leader>tf :TestFile<CR>
 noremap <Leader><Leader>tn :TestNearest<CR>
+
+let g:user_emmet_leader_key=","
 
 " Completion
 let g:coc_node_path = "/Users/mika/n/bin/node"
@@ -451,10 +456,10 @@ autocmd BufWrite *.coffee :call DeleteTrailingWS()
 vnoremap <silent> gv :call VisualSelection('gv')<CR>
 
 " Open vimgrep and put the cursor in the right position
-map <leader>g :vimgrep // **/*.<left><left><left><left><left><left><left>
+map <leader>g :Rg
 
 " Vimgreps in the current file
-map <leader><space> :vimgrep // <C-R>%<C-A><right><right><right><right><right><right><right><right><right>
+map <leader><space> :Rg  <C-R>%<C-A><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left><left>
 
 " When you press <leader>r you can search and replace the selected text
 vnoremap <silent> <leader>r :call VisualSelection('replace')<CR>
@@ -496,7 +501,7 @@ map <leader>s? z=
 noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 
 " Quickly open a buffer for scripbble
-map <leader>q :e ~/buffer<cr>
+" map <leader>q :e ~/buffer<cr>
 
 " Toggle paste mode on and off
 map <leader>pp :setlocal paste!<cr>
@@ -522,7 +527,7 @@ function! VisualSelection(direction) range
     if a:direction == 'b'
         execute "normal ?" . l:pattern . "^M"
     elseif a:direction == 'gv'
-        call CmdLine("vimgrep " . '/'. l:pattern . '/' . ' **/*.')
+        call CmdLine(":Rg " . l:pattern)
     elseif a:direction == 'replace'
         call CmdLine("%s" . '/'. l:pattern . '/')
     elseif a:direction == 'f'

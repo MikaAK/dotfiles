@@ -1,0 +1,90 @@
+# This file contains fish universal variable definitions.
+# VERSION: 3.0
+SETUVAR --export CFLAGS:\x2dO2\x20\x2dg\x20\x2dfno\x2dstack\x2dcheck\x20\x2dWno\x2derror\x3dimplicit\x2dfunction\x2ddeclaration
+SETUVAR --export EDITOR:nvim
+SETUVAR --export ERL_AFLAGS:\x2dkernel\x20shell_history\x20enabled
+SETUVAR --export GPG_TTY:/dev/ttys000
+SETUVAR --export N_PREFIX:/Users/mika/n
+SETUVAR --export --path ONI_NEOVIM_PATH:/usr/local/bin/nvim
+SETUVAR --export --path PATH:/Users/mika/\x2easdf/bin\x20/Users/mika/\x2easdf/shims\x20/usr/local/bin\x20/usr/bin\x20/bin\x20/usr/sbin\x20/sbin
+SETUVAR --export PGDATA:/usr/local/var/postgres
+SETUVAR ZO_CMD:zo
+SETUVAR Z_CMD:z
+SETUVAR Z_DATA:/Users/mika/\x2elocal/share/z/data
+SETUVAR Z_DATA_DIR:/Users/mika/\x2elocal/share/z
+SETUVAR Z_EXCLUDE:\x5e/Users/mika\x24
+SETUVAR __fish_classic_git_prompt_initialized:\x1d
+SETUVAR __fish_init_2_39_8:\x1d
+SETUVAR __fish_init_2_3_0:\x1d
+SETUVAR __fish_init_3_x:\x1d
+SETUVAR __fish_initialized:3100
+SETUVAR _fish_abbr__2D_:cd\x20\x2d
+SETUVAR _fish_abbr_gad:git\x20add\x20\x2e
+SETUVAR _fish_abbr_gadd:git\x20add\x20\x2e\x2e
+SETUVAR _fish_abbr_gco:git\x20checkout
+SETUVAR _fish_abbr_gcob:git\x20checkout\x20\x2db
+SETUVAR _fish_abbr_gcom:git\x20commit
+SETUVAR _fish_abbr_gcomas:git\x20checkout\x20master
+SETUVAR _fish_abbr_gcomm:git\x20commit\x20\x2dm
+SETUVAR _fish_abbr_gcpck:git\x20cherry\x2dpick
+SETUVAR _fish_abbr_gcz:git\x20cz
+SETUVAR _fish_abbr_gfpsh:git\x20push\x20\x2df\x20origin\x20\x28current\x2dbranch\x29
+SETUVAR _fish_abbr_ghfx:git\x20add\x20\x2e\x3band\x20git\x20ncommit\x20\x2d\x2damend\x20\x3band\x20git\x20push\x20\x2df\x20origin\x20\x28current\x2dbranch\x29
+SETUVAR _fish_abbr_glg:git\x20lg
+SETUVAR _fish_abbr_glog:git\x20lg
+SETUVAR _fish_abbr_gncom:git\x20ncommit
+SETUVAR _fish_abbr_gncomam:git\x20ncommit\x20\x2d\x2damend
+SETUVAR _fish_abbr_gpl:git\x20pull
+SETUVAR _fish_abbr_gplob:git\x20pull\x20origin\x20\x28current\x2dbranch\x29
+SETUVAR _fish_abbr_gplocb:git\x20pull\x20origin\x20master
+SETUVAR _fish_abbr_gplom:git\x20pull\x20origin\x20main
+SETUVAR _fish_abbr_gpr:git\x20pull\x2drequest\x20\x2dpb\x20main
+SETUVAR _fish_abbr_gpsh:git\x20push
+SETUVAR _fish_abbr_grb:git\x20branch\x20\x2d\x2dsort\x3d\x2dcommitterdate
+SETUVAR _fish_abbr_grob:git\x20reset\x20\x2d\x2dhard\x20origin/\x28current\x2dbranch\x29
+SETUVAR _fish_abbr_grtry:git\x20add\x20\x2e\x20\x3band\x20git\x20cz\x20\x2d\x2dretry
+SETUVAR _fish_abbr_gsth:git\x20stash
+SETUVAR _fish_abbr_gsthap:git\x20stash\x20apply
+SETUVAR _fish_abbr_gsts:git\x20status
+SETUVAR _fish_abbr_kube:kubectl
+SETUVAR _fish_abbr_mxcomp:mix\x20compile
+SETUVAR _fish_abbr_mxdpgt:mix\x20deps\x2eget
+SETUVAR _fish_abbr_mxtst:mix\x20test
+SETUVAR _fish_abbr_rb:reset\x2dbranch
+SETUVAR _fish_abbr_smysql:mysql\x2eserver\x20start
+SETUVAR _fisher_aliz_2D_ai_2F_google_2D_cloud_2D_sdk_2D_fish_2D_completion_files:/Users/mika/\x2econfig/fish/functions/gcloud_sdk_argcomplete\x2efish\x1e/Users/mika/\x2econfig/fish/completions/gcloud\x2efish\x1e/Users/mika/\x2econfig/fish/completions/gsutil\x2efish
+SETUVAR _fisher_jethrokuan_2F_z_files:/Users/mika/\x2econfig/fish/functions/__z\x2efish\x1e/Users/mika/\x2econfig/fish/functions/__z_add\x2efish\x1e/Users/mika/\x2econfig/fish/functions/__z_clean\x2efish\x1e/Users/mika/\x2econfig/fish/functions/__z_complete\x2efish\x1e/Users/mika/\x2econfig/fish/conf\x2ed/z\x2efish
+SETUVAR _fisher_jorgebucaran_2F_fisher_files:/Users/mika/\x2econfig/fish/functions/fisher\x2efish\x1e/Users/mika/\x2econfig/fish/completions/fisher\x2efish
+SETUVAR _fisher_oh_2D_my_2D_fish_2F_plugin_2D_aws_files:/Users/mika/\x2econfig/fish/functions/aws\x2efish\x1e/Users/mika/\x2econfig/fish/conf\x2ed/aws\x2efish\x1e/Users/mika/\x2econfig/fish/completions/aws\x2efish
+SETUVAR _fisher_plugins:jorgebucaran/fisher\x1ealiz\x2dai/google\x2dcloud\x2dsdk\x2dfish\x2dcompletion\x1ejethrokuan/z\x1eoh\x2dmy\x2dfish/plugin\x2daws\x1eoh\x2dmy\x2dfish/plugin\x2dnode\x2dbinpath
+SETUVAR fish_color_autosuggestion:555
+SETUVAR fish_color_cancel:\x2dr
+SETUVAR fish_color_command:005fd7
+SETUVAR fish_color_comment:990000
+SETUVAR fish_color_cwd:green
+SETUVAR fish_color_cwd_root:red
+SETUVAR fish_color_end:009900
+SETUVAR fish_color_error:ff0000
+SETUVAR fish_color_escape:bryellow\x1e\x2d\x2dbold
+SETUVAR fish_color_history_current:\x2d\x2dbold
+SETUVAR fish_color_host:normal
+SETUVAR fish_color_host_remote:yellow
+SETUVAR fish_color_match:\x2d\x2dbackground\x3dbrblue
+SETUVAR fish_color_normal:normal
+SETUVAR fish_color_operator:bryellow
+SETUVAR fish_color_param:00afff
+SETUVAR fish_color_quote:999900
+SETUVAR fish_color_redirection:00afff
+SETUVAR fish_color_search_match:bryellow\x1e\x2d\x2dbackground\x3dbrblack
+SETUVAR fish_color_selection:white\x1e\x2d\x2dbold\x1e\x2d\x2dbackground\x3dbrblack
+SETUVAR fish_color_status:red
+SETUVAR fish_color_user:brgreen
+SETUVAR fish_color_valid_path:\x2d\x2dunderline
+SETUVAR fish_greeting:Welcome\x20to\x20fish\x2c\x20the\x20friendly\x20interactive\x20shell
+SETUVAR fish_key_bindings:fish_default_key_bindings
+SETUVAR fish_pager_color_completion:\x1d
+SETUVAR fish_pager_color_description:B3A06D\x1eyellow
+SETUVAR fish_pager_color_prefix:white\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
+SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
+SETUVAR --export fish_user_abbreviations:\x2d\x20cd\x20\x2d\x1egco\x20git\x20checkout\x1egcom\x20git\x20commit\x1egpsh\x20git\x20push\x1egcz\x20git\x20cz\x1egpl\x20git\x20pull\x1eess\x20edvisor\x20s\x20server\x1eesc\x20edvisor\x20s\x20client\x1eeln\x20edvisor\x20lint\x1egad\x20git\x20add\x20\x2e\x1egcob\x20git\x20checkout\x20\x2db\x1eefr\x20edvisor\x20full\x2dreset\x1eeta\x20edvisor\x20test\x20agency\x1eetsh\x20edvisor\x20test\x20shared\x1eets\x20edvisor\x20test\x20school\x1esmysql\x20mysql\x2eserver\x20start\x1erb\x20reset\x2dbranch\x1egpr\x20push\x20\x3band\x20git\x20pull\x2drequest\x1egsth\x20git\x20stash\x1egsthap\x20git\x20stash\x20apply\x1eedv\x20edvisor\x1egrtry\x20git\x20add\x20\x2e\x20\x3band\x20git\x20cz\x20\x2d\x2dretry\x1egncomam\x20git\x20ncommit\x20\x2d\x2damend\x1egncom\x20git\x20ncommit\x1egcomm\x20git\x20commit\x20\x2dm\x1ekube\x20kubectl
+SETUVAR fish_user_paths:/usr/local/sbin\x1e/usr/local/opt/qt/bin\x1e/Users/mika/n/bin

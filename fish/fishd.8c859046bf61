@@ -3,6 +3,7 @@
 SET_EXPORT EDITOR:nvim
 SET_EXPORT ERL_AFLAGS:\x2dkernel\x20shell_history\x20enabled
 SET_EXPORT GPG_TTY:/dev/ttys000
+SET_EXPORT MIX_TARGET:rpi3
 SET_EXPORT N_PREFIX:/Users/mika/n
 SET_EXPORT PGDATA:/usr/local/var/postgres
 SET ZO_CMD:zo
@@ -42,5 +43,5 @@ SET fish_pager_color_description:B3A06D\x1eyellow
 SET fish_pager_color_prefix:white\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SET fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
 SET_EXPORT fish_user_abbreviations:\x2d\x20cd\x20\x2d\x1egco\x20git\x20checkout\x1egcom\x20git\x20commit\x1egpsh\x20git\x20push\x1egcz\x20git\x20cz\x1egpl\x20git\x20pull\x1eess\x20edvisor\x20s\x20server\x1eesc\x20edvisor\x20s\x20client\x1eeln\x20edvisor\x20lint\x1egad\x20git\x20add\x20\x2e\x1egcob\x20git\x20checkout\x20\x2db\x1eefr\x20edvisor\x20full\x2dreset\x1eeta\x20edvisor\x20test\x20agency\x1eetsh\x20edvisor\x20test\x20shared\x1eets\x20edvisor\x20test\x20school\x1esmysql\x20mysql\x2eserver\x20start\x1erb\x20reset\x2dbranch\x1egpr\x20push\x20\x3band\x20git\x20pull\x2drequest\x1egsth\x20git\x20stash\x1egsthap\x20git\x20stash\x20apply\x1eedv\x20edvisor\x1egrtry\x20git\x20add\x20\x2e\x20\x3band\x20git\x20cz\x20\x2d\x2dretry\x1egncomam\x20git\x20ncommit\x20\x2d\x2damend\x1egncom\x20git\x20ncommit\x1egcomm\x20git\x20commit\x20\x2dm\x1ekube\x20kubectl
-SET_EXPORT fish_user_paths:/Users/mika/n/bin\x1e/Users/mika/\x2efzf/bin
+SET_EXPORT fish_user_paths:/usr/local/opt/python/libexec/bin\x1e/Users/mika/\x2efzf/bin\x1e/Users/mika/n/bin
 SET fisher_dependency_count:brew\x1edocker\x2dfish\x2dcompletion\x1egi\x1elocalhost\x1eosx\x1essh\x1ez\x1enode\x1egetopts
