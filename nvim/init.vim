@@ -26,6 +26,9 @@ Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'qpkorr/vim-renamer'
 Plug 'jremmen/vim-ripgrep'
+"
+" Find and replace
+Plug 'brooth/far.vim'
 
 " if !has("gui_running")
 "   " Sadly there's no devicons in vimr...
@@ -112,6 +115,13 @@ map <Leader>w <esc>:StripWhitespace<CR>:w<CR>
 let test#neovim#term_position = "belowright"
 noremap <Leader><Leader>tf :TestFile<CR>
 noremap <Leader><Leader>tn :TestNearest<CR>
+
+noremap <Leader>sy "+y
+noremap <Leader>sp "+p
+
+noremap <Leader><Leader>p "1p
+noremap <Leader><Leader><Leader>p "2p
+noremap <Leader><Leader><Leader><Leader>p "3p
 
 autocmd BufRead,BufNewFile *.ex,*.exs,mix.lock set filetype=elixir
 autocmd BufRead,BufNewFile *.heex,*.eex set filetype=eelixir
